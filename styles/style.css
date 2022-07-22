@@ -12,6 +12,10 @@
    font-family: "Montserrat SemiBold";
    src: url(../fonts/Montserrat-SemiBold.ttf) format("truetype");
 }
+@font-face {
+   font-family: "Montserrat Bold";
+   src: url(../fonts/Montserrat-Bold.ttf) format("truetype");
+}
 
 /* COMMON */
 body {
@@ -61,7 +65,7 @@ h1.header {
 }
 div.header {
    background-color: #0A0A0A;
-   padding: 5.7px 8px;
+   padding: 6px 8px;
    margin: 0;
 }
 div.header.block {
@@ -69,7 +73,7 @@ div.header.block {
    padding: 0;
 }
 p.header.block.text {
-   font-size: calc(10px + 0.24vw);
+   font-size: calc(10px + 0.25vw);
    color: #4E4E4E;
    margin: 0;
    white-space: nowrap;
@@ -118,14 +122,27 @@ div.extensions {
 #extnDescriptionCollapse {
    padding: 0;
 }
+p.extensions-link {
+   color: #151515;
+   margin: 0;
+   padding: 0;
+}
+div.browser-name {
+   font-size: calc(10px + 0.12vw);
+   font-family: "Montserrat SemiBold";
+   margin: 9px 0;
+   color: #626262;
+   justify-content: center;
+   text-align: center;
+}
 
 /* RECTANGLES */
 a.rectangle {
    padding: 0;
-   width: 191px;
+   width: 192px;
 }
 div.rectangle {
-   height: 66.2px;
+   height: 67px;
    border-radius: 8px;
    box-shadow: inset -3px -4px 13px rgba(0, 0, 0, 0.6);
    padding: 9px 10px;
@@ -141,7 +158,7 @@ div.vlwrap {
  }
  @media (max-width: 980px) {
    div.rectangle {
-      height: 60px;
+      height: 64px;
    }
    div.vlwrap {
       visibility: hidden;
@@ -149,7 +166,7 @@ div.vlwrap {
       padding: 8px;
    }
 }
-@media (max-width: 670px) {
+@media (max-width: 675px) {
 	p.extensions {
 		margin: 1.2vw 34vw 0 34vw;
 	}
@@ -162,6 +179,9 @@ div.vlwrap {
    div.vlwrap {
       visibility: hidden;
       padding: 0;
+   }
+   div.browser-name {
+      visibility: hidden;
    }
 }
 

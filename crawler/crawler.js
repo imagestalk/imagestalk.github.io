@@ -1,5 +1,5 @@
 // Config
-var target_url = "https://sletaem.kz/catalog/ekskursionnye_tury/ekskursionnye_tury_v_ssha/1622/";
+var target_url = "https://sletaem.kz/";
 var method = "GET";
 
 // HttpObject initialize
