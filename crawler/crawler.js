@@ -26,10 +26,16 @@ request.onreadystatechange = function() {
       const img_arr = [...resp.matchAll(regex)];
 
       for (let i = 0; i < img_arr.length; i++) {
-         document.body.innerHTML +=
-            '<a href="' + domain + img_arr[i][1] + '">' +
-            '<img src="'+ domain + img_arr[i][1] + '" />' +
-            '</a>';
+         document.getElementById("place-here").innerHTML +=
+           '<div class="img card"> \
+               <a class="img" target="_blank" href="' + domain + img_arr[i][1] + '"> \
+                  <img class="img card-img-top" src="' + domain + img_arr[i][1] + '"> \
+               </a>  \
+               <div class="img-text card-body row">  \
+                  <p class="img-text card-text col">Аноним</p>  \
+                  <p class="img-text card-text col" style="text-align: end;">№16423301</p> \
+               </div> \
+            </div>';
       };
    };
 };

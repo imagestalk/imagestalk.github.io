@@ -2,19 +2,19 @@
 
 @font-face {
    font-family: "Montserrat Bold Italic";
-   src: url(../fonts/Montserrat-BoldItalic.ttf) format("truetype");
+   src: url(fonts/Montserrat-BoldItalic.ttf) format("truetype");
 }
 @font-face {
    font-family: "Montserrat Medium";
-   src: url(../fonts/Montserrat-Medium.ttf) format("truetype");
+   src: url(fonts/Montserrat-Medium.ttf) format("truetype");
 }
 @font-face {
    font-family: "Montserrat SemiBold";
-   src: url(../fonts/Montserrat-SemiBold.ttf) format("truetype");
+   src: url(fonts/Montserrat-SemiBold.ttf) format("truetype");
 }
 @font-face {
    font-family: "Montserrat Bold";
-   src: url(../fonts/Montserrat-Bold.ttf) format("truetype");
+   src: url(fonts/Montserrat-Bold.ttf) format("truetype");
 }
 
 /* COMMON */
@@ -62,6 +62,7 @@ h1.header {
    font-size: 5.2vw;
    font-family: "Montserrat Bold Italic";
    margin-top: 6.1vw;
+   user-select: none;
 }
 div.header {
    background-color: #0A0A0A;
@@ -86,7 +87,7 @@ pre.description {
    overflow: unset;
 }
 a.description {
-   font-family: Montserrat SemiBold;
+   font-family: "Montserrat SemiBold";
    font-size: calc(13px + 0.2vw);
    color: #969696;
 }
@@ -188,4 +189,26 @@ div.vlwrap {
 /* IMAGES */
 img {
    border-radius: 5px;
+}
+
+/* CARDS */
+div.img-text {
+   padding: calc(2px + 0.34vw);
+}
+p.img-text {
+   color: #000000;
+   padding: 0 2px;
+   margin: 0;
+   font-size: calc(5px + 0.6vw);
+}
+div.img {
+   width: calc(100px + 11vw);
+   padding: 2px;
+}
+a.img {
+   height: 100%;
+   display: inherit;
+}
+img.img {
+   object-fit: cover;
 }
