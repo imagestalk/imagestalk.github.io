@@ -27,7 +27,7 @@ body {
    text-align: center;
 }
 p {
-   font-family: "Montserrat Medium";
+   font-family: "Montserrat SemiBold";
 }
 a {
    color: #2B7ECA;
@@ -107,7 +107,7 @@ div.description {
    height: 100%;
    position: absolute;
    top: 0;
-   right: 0;
+   left: 0;
 }
 
 /* EXTENSIONS */
@@ -192,17 +192,23 @@ img {
 }
 
 /* CARDS */
+div.cards-back {
+   justify-content: center;
+   background-color: #FFFFFF;
+   margin: 1.3vw 0;
+}
 div.img-text {
    padding: calc(2px + 0.34vw);
 }
 p.img-text {
    color: #000000;
-   padding: 0 2px;
    margin: 0;
    font-size: calc(5px + 0.6vw);
 }
 div.img {
    width: calc(100px + 11vw);
+   height: calc(120px + 11vw);
+   border-color: #e7e7e7;
    padding: 2px;
 }
 a.img {
@@ -211,4 +217,5 @@ a.img {
 }
 img.img {
    object-fit: cover;
+   height: calc(100px + 9.5vw);
 }
