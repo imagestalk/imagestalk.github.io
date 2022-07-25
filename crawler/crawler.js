@@ -22,14 +22,15 @@ function main() {
    request.open(method, target_url, true);
    request.send(null);
    request.onreadystatechange = function() {
-      // Error handling
-      if (request.readyState != 4 || request.status != 200) {
-         console.log("nope");
+      console.log("readyState: " + request.readyState + "\n" + "status: " + request.status);
+      // Error handling (because CORS errors can't be handled)
+      if (request.status != 200) {
+         document.getElementById("error-here").innerHTML += "CORS ERROR HERE1";
          fetch(error_page).then(response => response.text()).then(data => {
             document.getElementById("error-here").innerHTML += data;
          });
-         
-      } else {
+      }
+      if (request.readyState == 4 && request.status == 200) {
          // Parsing images
          var resp = request.responseText;
          var regex = /<img [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*src=\"([a-z0-9A-Z=.\/_\-?;:&\\]*)\"[a-z0-9A-Z=."\/_\-? ;:&]*>/g;

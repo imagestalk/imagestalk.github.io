@@ -112,7 +112,7 @@ div.description {
 
 /* EXTENSIONS */
 p.extensions {
-   margin: 1.2vw 38.2vw 0 38.2vw;
+   margin: 1.2vw 38vw 0 38vw;
    font-size: calc(13px + 0.16vw);
    line-height: 1.4;
 }
