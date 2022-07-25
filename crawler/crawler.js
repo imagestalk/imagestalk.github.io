@@ -19,21 +19,26 @@ function makeHttpObject() {
 function main() {
    const domain = /http[s]?:\/\/[a-z0-9.]*\.[a-z]{2,3}/g.exec(target_url);
    var request = makeHttpObject();
+   var error_lever = false;
+
    request.open(method, target_url, true);
    request.send(null);
    request.onreadystatechange = function() {
       console.log("readyState: " + request.readyState + "\n" + "status: " + request.status);
       // CORS error handling
       if (request.status != 200) {
-         fetch(error_page).then(response => response.text()).then(data => {
-            document.getElementById("error-here").innerHTML += data;
-         });
+         if (!error_lever) {
+            fetch(error_page).then(response => response.text()).then(data => {
+               document.getElementById("error-here").innerHTML += data;
+            });
+            error_lever = true;
+         }
       } else if (request.readyState == 4) {
-         // Parsing images
+         // Parse images
          var resp = request.responseText;
          var regex = /<img [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*src=\"([a-z0-9A-Z=.\/_\-?;:&\\]*)\"[a-z0-9A-Z=."\/_\-? ;:&]*>/g;
          var img_arr = [...resp.matchAll(regex)];
-         // Writing images
+         // Print images
          for (img of img_arr) {
             var img_path = img[1];
             var img_url;
