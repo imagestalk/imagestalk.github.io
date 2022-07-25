@@ -1,5 +1,5 @@
 // Config
-const target_url = "https://www.4chan.org/";
+const target_url = "htsdfs";
 const error_page = "pages/cors_error.html"
 var method = "GET";
 
@@ -25,10 +25,10 @@ request.send(null);
 request.onreadystatechange = function() {
    if (request.readyState != 4 || request.status != 200) {
       console.log("nope");
-      var error_request = makeHttpObject();
-      error_request.open("GET", error_page, true);
-      error_request.send(null);
-      console.log(error_request.responseText);
+      fetch(error_page).then(response => response.text()).then(data => {
+         console.log(data);
+      });
+
    } else {
       var resp = request.responseText;
       var regex = /<img [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*src=\"([a-z0-9A-Z=.\/_\-?;:&\\]*)\"[a-z0-9A-Z=."\/_\-? ;:&]*>/g;
@@ -43,7 +43,7 @@ request.onreadystatechange = function() {
          var img_url;
 
          if (img_path.slice(0, 2) == "//") {
-            img_url = "http:" + img_path;
+            img_url = "https:" + img_path;
          } else {
             img_url = domain + img_path;
          }
