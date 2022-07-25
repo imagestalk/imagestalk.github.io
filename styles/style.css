@@ -74,7 +74,7 @@ div.header.block {
    padding: 0;
 }
 p.header.block.text {
-   font-size: calc(10px + 0.25vw);
+   font-size: calc(10px + 0.24vw);
    color: #4E4E4E;
    margin: 0;
    white-space: nowrap;
@@ -89,14 +89,14 @@ pre.description {
 a.description {
    font-family: "Montserrat SemiBold";
    font-size: calc(13px + 0.2vw);
-   color: #969696;
+   color: #858585;
 }
 div.description {
    border-radius: 0;
    background-color: #1D1D1D;
    color: #FFFFFF;
    font-size: calc(13px + 0.12vw);
-   padding: 2.3vw 23.5vw;
+   padding: 2.3vw 22.5vw;
 }
 #descriptionCollapse {
    padding: 0;
@@ -189,6 +189,12 @@ div.vlwrap {
 /* IMAGES */
 img {
    border-radius: 5px;
+}
+
+/* SEARCH */
+div.search {
+   background-color: #232323;
+   margin-top: 0.7vw;
 }
 
 /* CARDS */

@@ -53,25 +53,130 @@
           Всё взаимодействие с данными осуществляется клиентской стороной приложения без участия сервера.<br>
           Картинки сохраняются только в оперативной памяти клиентского хоста в виде ссылок и поэтому доступны лишь на
           время сеанса страницы
-          (и пока их не удалят из источника-имиджборды). Скрауленные ссылки могут быть сохранены в формате JSON.
+          (и пока их не удалят из источника-имиджборды).
           <div class="side-decor"></div>
         </div>
       </div>
     </div>
 
     <!-- CORS error message -->
-    <div id="error-here"></div>
+    <div id="error-here">    <!-- Extensions -->
+      <p class="extensions centered">Для работы сайта вам требуется включить на нём данное расширение:</p>
+      <div class="extensions row">
+        <a class="rectangle col-sm-3" href="https://stackoverflow.com/a/12158217/18065686" target="_blank">
+          <div class="rectangle row"
+            style="padding: 0; background: #34AAFF; filter: drop-shadow(0px 4px 50px rgba(52, 170, 255, 0.2));">
+            <img class="col-sm-1" src="styles/imgs/safari.svg" style="width: 43px; padding: 0 0 5px 0; margin: 0 6px 0 9px;">
+            <p class="extensions-link col"
+              style="font-family: Montserrat Bold; font-size: calc(13px + 0.16vw); padding: 13px 0; line-height: 19px;">How
+              to disable CORS in Safari</p>
+            <div class="browser-name row">Safari</div>
+          </div>
+        </a>
+        <div class="vlwrap col-sm-1">
+          <div class="vl"></div>
+        </div>
+        <a class="rectangle col-sm-3"
+          href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino" target="_blank">
+          <div class="rectangle row"
+            style="padding: 0; background: #44FF57; filter: drop-shadow(0px 4px 50px rgba(52, 255, 72, 0.2));">
+            <img class="col-sm-1" src="styles/imgs/chrome.svg"
+              style="width: 48px; padding: 0px 0px 5px 0px; margin: 0 4px 0 6px;">
+            <div class="col" style="padding: 12px 0; line-height: 19px;">
+              <p class="extensions-link" style="font-family: Montserrat Bold; font-size: calc(13px + 0.2vw);">CORS Unblock
+              </p>
+              <p class="extensions-link" style="font-family: Montserrat SemiBold; font-size: calc(13px + 0.05vw);">0.3.4,
+                197KiB</p>
+            </div>
+            <div class="browser-name row">Chrome/Chromium/Brave</div>
+          </div>
+        </a>
+        <div class="vlwrap col-sm-1">
+          <div class="vl"></div>
+        </div>
+        <a class="rectangle col-sm-3" href="https://addons.mozilla.org/en-US/firefox/addon/cors-unblock/" target="_blank">
+          <div class="rectangle row"
+            style="padding: 0; background: #8348FF; filter: drop-shadow(0px 4px 50px rgba(129, 52, 255, 0.27));">
+            <img class="col-sm-1" src="styles/imgs/firefox.svg"
+              style="width: 40px; padding: 0px 0px 5px 0px; margin: 0px 8px 0 10px;">
+            <div class="col" style="padding: 12px 0; line-height: 19px;">
+              <p class="extensions-link" style="font-family: Montserrat Bold; font-size: calc(13px + 0.2vw);">CORS Unblock
+              </p>
+              <p class="extensions-link" style="font-family: Montserrat SemiBold; font-size: calc(13px + 0.05vw);">0.1.9,
+                196KiB</p>
+            </div>
+            <div class="browser-name row">Firefox (другие Gecko-браузеры)</div>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Extension description -->
+      <pre class="description centered"><a class="description" data-bs-toggle="collapse" href="#ExtensionDescription" aria-expanded="false" aria-controls="ExtensionDescription">Зачем нужно это расширение?  ▾</a></pre>
+      <div class="row">
+        <div class="collapse multi-collapse" id="ExtensionDescription">
+          <div class="description card card-body">
+            Современные представления о веб-безопасности требуют от браузеров запрета на межсайтовые запросы в JavaScript
+            по-умолчанию – такой принцип называется CORS.
+            Чтобы данный сайт мог функционировать, обращаясь к сторонним ресурсам, вам нужно явно разрешить своему браузеру
+            запросы такого вида.
+            Это разрешение обеспечивают указанные выше расширения.
+            <div class="side-decor"></div>
+          </div>
+        </div>
+      </div></div>
 
     <!-- Crawler -->
     <script src="crawler/crawler.js"></script>
   
-    <!-- Image cards -->
-    <div id="cards-here" class="cards-back row"></div>
+    <!-- Search -->
+    <div id="cards-here" class="search container-fluid">
+      <div class="row" style="margin: 1.9vw;text-align: center;">
+        <div class="col-sm-4">
+          <!-- Search main settings -->
+          <div>Ресурс:<select class="custom-select">
+            <option selected="">Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            </select>
+          </div><div>Доска:<select class="custom-select">
+            <option selected="">Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <!-- Search button -->
+        <div class="col-sm-4" style="align-self: center;">Показать</div>
+        <!-- Search secondary settings -->
+        <div class="col-sm-4">
+          <div>Столбцов в строке:<select class="custom-select">
+            <option selected="">Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            </select>
+          </div><div>Столбцов в строке:<select class="custom-select">
+            <option selected="">Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            </select>
+          </div><div>Столбцов в строке:<select class="custom-select">
+            <option selected="">Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div class="container-fluid mt-auto">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 border-top"
-        style="--bs-border-color: #4f4f4f;">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top"
+        style="--bs-border-color: #00000000;">
         <div class="col-md-4 d-flex align-items-center">
           <span class="text-muted"
             style="white-space: nowrap; margin-left: 3vw; font-family: Montserrat Medium; font-size: calc(10px + 0.46vw);">©
