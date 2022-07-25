@@ -23,14 +23,12 @@ function main() {
    request.send(null);
    request.onreadystatechange = function() {
       console.log("readyState: " + request.readyState + "\n" + "status: " + request.status);
-      // Error handling (because CORS errors can't be handled)
+      // CORS error handling
       if (request.status != 200) {
-         document.getElementById("error-here").innerHTML += "CORS ERROR HERE1";
          fetch(error_page).then(response => response.text()).then(data => {
             document.getElementById("error-here").innerHTML += data;
          });
-      }
-      if (request.readyState == 4 && request.status == 200) {
+      } else if (request.readyState == 4) {
          // Parsing images
          var resp = request.responseText;
          var regex = /<img [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*src=\"([a-z0-9A-Z=.\/_\-?;:&\\]*)\"[a-z0-9A-Z=."\/_\-? ;:&]*>/g;
