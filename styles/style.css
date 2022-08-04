@@ -246,6 +246,9 @@ select.search {
    padding: 0 7px;
    width: 65px;
 }
+select.search:hover {
+   background: #303030;
+}
 button.search {
    border: none;
    align-self: center;
