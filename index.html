@@ -43,9 +43,9 @@
     <h1 class="header centered">IMAGESTALKING</h1>
 
     <!-- Description -->
-    <pre class="description centered" style="margin-top: 2.4vw;"><a class="description" data-bs-toggle="collapse" href="#SiteDescription" aria-expanded="false" aria-controls="SiteDescription">Что это за сайт?  ▾</a></pre>
+    <pre class="description centered" style="margin-top: 2.2vw;"><a class="description" data-bs-toggle="collapse" href="#SiteDescription" aria-expanded="false" aria-controls="SiteDescription">Что это за сайт?  ▾</a></pre>
     <div class="row">
-      <div class="collapse multi-collapse" id="SiteDescription">
+      <div class="predescript collapse multi-collapse" id="SiteDescription">
         <div class="description card card-body">
           Данный сайт представляет собой клиентское приложение на JavaScript, позволяющее получать набор последних
           картинок с имиджборд
@@ -66,46 +66,47 @@
     <script src="crawler/crawler.js"></script>
   
     <!-- Search -->
-    <div id="cards-here" class="search container-fluid">
-      <div class="row" style="margin: 1.9vw;text-align: center;">
-        <div class="col-sm-4">
+    <div id="cards-here" class="search-back container-fluid">
+      <div class="search row" style="margin: 1.4vw; text-align: center;">
+        <div class="search-left col-sm-4">
           <!-- Search main settings -->
-          <div>Ресурс:<select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            </select>
-          </div><div>Доска:<select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            </select>
-          </div>
+          <p class="search" style="margin: 0;">Ресурс:</p>
+          <select class="search custom-select" style="width: calc(120px + 6vw);">
+            <option selected="">ernstchan.xyz</option>
+            <option value="1">2ch.hk</option>
+            <option value="2">4chan.org</option>
+          </select>
+          <p class="search" style="margin: 0; padding-top: 1vw;">Доска:</p>
+          <select class="search custom-select">
+            <option selected="">/b/</option>
+            <option value="1">/pol/</option>
+            <option value="2">/it/</option>
+          </select>
         </div>
         <!-- Search button -->
-        <div class="col-sm-4" style="align-self: center;">Показать</div>
+        <button type="button" class="search col-sm-4" style="align-self: center;">Показать</button>
         <!-- Search secondary settings -->
-        <div class="col-sm-4">
-          <div>Столбцов в строке:<select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            </select>
-          </div><div>Столбцов в строке:<select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            </select>
-          </div><div>Столбцов в строке:<select class="custom-select">
-            <option selected="">Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select></div>
+        <div class="search-right col-sm-4">
+          <p class="search-right">Столбцов в строке:</p>
+          <select class="search custom-select">
+            <option selected="">5</option>
+            <option value="1">6</option>
+            <option value="2">4</option>
+          </select>
+          <p class="search-right">Метод заполнения:</p>
+          <select class="search custom-select">
+            <option selected="">Fit</option>
+            <option value="1">Fill</option>
+          </select>
+          <p class="search-right">Строк на странице:</p>
+          <select class="search custom-select">
+            <option selected="">10</option>
+            <option value="1">30</option>
+            <option value="2">50</option>
+            <option value="3">100</option>
+            <option value="4">500</option>
+            <option value="5">1000</option>
+          </select>
         </div>
       </div>
     </div>
