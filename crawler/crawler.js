@@ -27,6 +27,23 @@ function main() {
       if (request.status != 200) {
          fetch(error_page).then(response => response.text())
             .then(data => { document.getElementById("error-here").innerHTML += data; });
+         document.getElementById("buttons-activate").innerHTML +=
+            'button.search { \
+               background: #5C5C5C !important; \
+               color: #7A7A7A !important; \
+            } \
+            button.search:active { \
+               box-shadow: inset -3px -4px 12px rgb(0 0 0 / 50%) !important; \
+            } \
+            p.search { \
+               color: #717171 !important; \
+            } \
+            p.search-right { \
+               color: #717171 !important; \
+            } \
+            select.search { \
+               color: #717171 !important; \
+            }';
       } else if (request.readyState != 4) {
          // Parse images
          var resp = request.responseText;
@@ -41,7 +58,8 @@ function main() {
             } else {
                img_url = domain + img_path;
             }
-            document.getElementById("cards-here").innerHTML += '<div class="img card"> \
+            document.getElementById("cards-here").innerHTML +=
+               '<div class="img card"> \
                   <a class="img" target="_blank" href="' + img_url + '"> \
                      <img class="img card-img-top" src="' + img_url + '"> \
                   </a>  \
