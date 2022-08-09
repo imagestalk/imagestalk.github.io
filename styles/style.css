@@ -34,7 +34,7 @@ a {
    text-decoration: none;
 }
 a:hover {
-   color: #4ea9ff;
+   color: #3fa2ff;
 }
 .row {
    margin: 0;
@@ -115,7 +115,7 @@ div.predescript {
 
 /* EXTENSIONS */
 p.extensions {
-   margin: 1.2vw 38vw 0 38vw;
+   margin: 1.2vw 37vw 0 37vw;
    font-size: calc(13px + 0.16vw);
    line-height: 1.4;
 }
@@ -255,7 +255,7 @@ button.search {
    color: #ffffff;
    width: calc(115px + 3.6vw);
    height: calc(55px + 0.8vw);
-   background: linear-gradient(100.94deg, #FF23A7 2.99%, #2395FF 99.87%);
+   background: linear-gradient(100.94deg, #FF1CA4 2.99%, #1A91FF 99.87%);
    box-shadow: inset -3px -4px 12px rgb(0 0 0 / 50%);
    border-radius: 8px;
    font-size: calc(14px + 0.4vw);
@@ -263,10 +263,15 @@ button.search {
    display: flex;
    justify-content: center;
    align-items: center;
+   transition: 0.06s;
 }
 button.search:active {
-   box-shadow: inset 6px 6px 21px rgb(0 0 0 / 50%);
-   color: #f3f3f3;
+   background: linear-gradient(100.94deg, #FF079C 2.99%, #0989FF 99.87%);
+   box-shadow: inset 10px 10px 25px rgb(0 0 0 / 60%);
+   color: #e0e0e0;
+}
+button.search:hover {
+   background: linear-gradient(100.94deg, #FF079C 2.99%, #0989FF 99.87%);
 }
 @media (max-width: 855px)  {
    div.search-left {
@@ -275,6 +280,11 @@ button.search:active {
 }
 
 /* CARDS */
+div.search-back-2 {
+   background: #FAFAFA;
+   border-radius: 9px;
+   justify-content: center;
+}
 div.cards-back {
    justify-content: center;
    background-color: #FFFFFF;

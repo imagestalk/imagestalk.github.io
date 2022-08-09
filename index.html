@@ -50,7 +50,7 @@
           Данный сайт представляет собой клиентское приложение на JavaScript, позволяющее получать набор последних
           картинок с имиджборд
           (а потенциально и отправлять любые запросы ко внешним ресурсам).<br>
-          Всё взаимодействие с данными осуществляется клиентской стороной приложения без участия сервера.<br>
+          Всё взаимодействие с данными осуществляется пользовательской стороной приложения без участия сервера.<br>
           Картинки сохраняются только в оперативной памяти клиентского хоста в виде ссылок и поэтому доступны лишь на
           время сеанса страницы
           (и пока их не удалят из источника-имиджборды).
@@ -66,7 +66,7 @@
     <script src="crawler/crawler.js"></script>
   
     <!-- Search -->
-    <div id="cards-here" class="search-back container-fluid">
+    <div class="search-back container-fluid">
       <div class="search row" style="margin: 1.4vw; text-align: center;">
         <div class="search-left col-sm-4">
           <!-- Search main settings -->
@@ -89,8 +89,8 @@
         <div class="search-right col-sm-4">
           <p class="search-right">Столбцов в строке:</p>
           <select class="search custom-select">
-            <option selected="">5</option>
             <option value="1">6</option>
+            <option selected="">5</option>
             <option value="2">4</option>
           </select>
           <p class="search-right">Метод заполнения:</p>
@@ -105,9 +105,10 @@
             <option value="2">50</option>
             <option value="3">100</option>
             <option value="4">500</option>
-            <option value="5">1000</option>
           </select>
         </div>
+      </div>
+      <div id="cards-here" class="search-back-2 row">
       </div>
     </div>
 
@@ -124,7 +125,7 @@
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3"
             style="font-family: 'Montserrat Medium'; font-size: calc(10px + 0.46vw); color: #6c757d; margin-right: 3vw;">
-            GNU GPL 3</li>
+            GNU GPL v3</li>
         </ul>
       </footer>
     </div>
