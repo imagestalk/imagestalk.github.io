@@ -78,7 +78,10 @@ function appendImagesFourchan(request) {
       </div>';
 
       // Compress
-      var last_img = document.getElementById("newimg");
+      var last_img = document.createElement("img");
+      last_img.src="https://imagestalk.github.io/styles/imgs/icon.jpg";
+      last_img.id="newimg";
+      last_img.crossOrigin="anonymous";
       compressImage(last_img, 0.5, 0.1);
    }
 }
