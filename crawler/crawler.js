@@ -1,5 +1,5 @@
 // Config
-const cors_check_url = "https://boards.4channel.org/o/";
+const cors_check_url = "https://google.com/";
 const error_page     = "pages/cors_error.html";
 const method         = "GET";
 
@@ -15,43 +15,6 @@ function makeHttpObject() {
    throw new Error("Could not create HTTP request object.");
 }
 
-// Image compressing
-// https://img.ly/blog/how-to-compress-an-image-before-uploading-it-in-javascript/
-function compressImage(imgToCompress, resizingFactor, quality) {
-   const compressedImage = document.getElementById("newimg");
-   let compressedImageBlob;
-
-   const canvas = document.createElement("canvas");
-   const context = canvas.getContext("2d");
-
-   const originalWidth = imgToCompress.width;
-   const originalHeight = imgToCompress.height;
-
-   const canvasWidth = originalWidth * resizingFactor;
-   const canvasHeight = originalHeight * resizingFactor;
-
-   canvas.width = canvasWidth;
-   canvas.height = canvasHeight;
-
-   context.drawImage(
-      imgToCompress,
-      0,
-      0,
-      originalWidth * resizingFactor,
-      originalHeight * resizingFactor
-   );
-   canvas.toBlob(
-      (blob) => {
-         if (blob) {
-            compressedImageBlob = blob;
-            compressedImage.src = URL.createObjectURL(compressedImageBlob);
-         }
-      },
-      "image/jpeg",
-      quality
-   );
-}
-
 // 4chan.org
 function appendImagesFourchan(request) {
    // Parse
@@ -65,24 +28,18 @@ function appendImagesFourchan(request) {
          img_url = "https:" + img_url;
       } else {
          img_url = /http[s]?:\/\/[a-z0-9.]*\.[a-z]{2,3}/g.exec(target_url) + img_url;
-      };
+      }
 
       // Print
       document.getElementById("cards-here").innerHTML +=
-      '<div class="img card"> \
-         <img class="img card-img-top" id="newimg" src="'+img_url+'" crossorigin="anonymous" onclick="window.open(this.src)"> \
+      '<div class="img card" > \
+         <img class="img card-img-top" src="'+img_url+'" crossorigin="anonymous" onclick="window.open(this.src)"> \
          <div class="img-text card-body row">  \
             <p class="img-text card-text col">Аноним</p>  \
             <p class="img-text card-text col" style="text-align: end;">№16423301</p> \
          </div> \
       </div>';
-
       // Compress
-      var last_img = document.createElement("img");
-      last_img.src="https://imagestalk.github.io/styles/imgs/icon.jpg";
-      last_img.id="newimg";
-      last_img.crossOrigin="anonymous";
-      compressImage(last_img, 0.5, 0.1);
    }
 }
 
