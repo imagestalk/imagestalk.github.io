@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style id="buttons-activate"></style>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
@@ -60,7 +59,7 @@
     </div>
 
     <!-- CORS error message -->
-    <div id="error-here"></div>
+    <div id="cors-error"></div>
 
     <!-- Crawler -->
     <script src="crawler/crawler.js"></script>
@@ -71,20 +70,22 @@
         <div class="search-left col-sm-4">
           <!-- Search main settings -->
           <p class="search" style="margin: 0;">Ресурс:</p>
-          <select class="search custom-select" style="width: calc(120px + 6vw);">
-            <option selected="">ernstchan.xyz</option>
+          <select id="chan_url" class="search custom-select" style="width: calc(120px + 6vw);">
+            <option selected="">4chan.org</option>
             <option value="1">2ch.hk</option>
-            <option value="2">4chan.org</option>
+            <option value="2">kohlchan.net</option>
+            <option value="3">ernstchan.xyz</option>
           </select>
           <p class="search" style="margin: 0; padding-top: 1vw;">Доска:</p>
-          <select class="search custom-select" style="width: fit-content;">
+          <select id="board" class="search custom-select" style="width: fit-content;">
             <option selected="">/b/</option>
             <option value="1">/pol/</option>
             <option value="2">/it/</option>
+            <option value="3">/k/</option>
           </select>
         </div>
         <!-- Search button -->
-        <button type="button" class="search col-sm-4" style="align-self: center;">Показать</button>
+        <button type="button" id="search" class="search col-sm-4" style="align-self: center;">Показать</button>
         <!-- Search secondary settings -->
         <div class="search-right col-sm-4">
           <p class="search-right">Столбцов в строке:</p>

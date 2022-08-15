@@ -279,6 +279,27 @@ button.search:hover {
    }
 }
 
+@-webkit-keyframes slide-top {
+   0% {
+     -webkit-transform: translateY(300px);
+             transform: translateY(300px);
+   }
+   100% {
+     -webkit-transform: translateY(0);
+             transform: translateY(0);
+   }
+ }
+ @keyframes slide-top {
+   0% {
+     -webkit-transform: translateY(300px);
+             transform: translateY(300px);
+   }
+   100% {
+     -webkit-transform: translateY(0);
+             transform: translateY(0);
+   }
+ }
+ 
 /* CARDS */
 div.search-back-2 {
    background: #FAFAFA;
@@ -303,12 +324,12 @@ div.img {
    height: calc(120px + 11vw);
    border-color: #e7e7e7;
    padding: 2px;
-}
-a.img {
-   height: 100%;
-   display: inherit;
+   -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
 }
 img.img {
+   height: 100%;
+   display: inherit;
    object-fit: cover;
    height: calc(100px + 9.5vw);
 }
