@@ -24,10 +24,9 @@ function appendImagesFourchan(request) {
    // Format
    for (img of img_arr.slice(1)) {
       var img_url = img[1];
+      console.log(img_url);
       if (img_url.slice(0, 2) == "//") {
          img_url = "https:" + img_url;
-      } else {
-         img_url = /http[s]?:\/\/[a-z0-9.]*\.[a-z]{2,3}/g.exec(target_url) + img_url;
       }
 
       // Print
