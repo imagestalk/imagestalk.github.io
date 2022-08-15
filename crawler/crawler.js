@@ -24,10 +24,10 @@ function appendImagesFourchan(request) {
    // Format
    for (img of img_arr.slice(1)) {
       var img_url = img[1];
-      console.log(img_url);
       if (img_url.slice(0, 2) == "//") {
          img_url = "https:" + img_url;
       }
+      console.log(img_url);
 
       // Print
       document.getElementById("cards-here").innerHTML +=
