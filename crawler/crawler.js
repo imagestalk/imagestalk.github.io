@@ -1,5 +1,5 @@
 // Config
-const cors_check_url = "https://google.com/";
+const cors_check_url = "https://boards.4channel.org/o/";
 const error_page     = "pages/cors_error.html";
 const method         = "GET";
 
@@ -70,7 +70,7 @@ function appendImagesFourchan(request) {
       // Print
       document.getElementById("cards-here").innerHTML +=
       '<div class="img card"> \
-         <img class="img card-img-top" id="newimg" crossorigin="anonymous"> \
+         <img class="img card-img-top" id="newimg" src="'+img_url+'" crossorigin="anonymous" onclick="window.open(this.src)"> \
          <div class="img-text card-body row">  \
             <p class="img-text card-text col">Аноним</p>  \
             <p class="img-text card-text col" style="text-align: end;">№16423301</p> \
@@ -78,10 +78,7 @@ function appendImagesFourchan(request) {
       </div>';
 
       // Compress
-      var last_img = document.createElement("img");
-      last_img.src = img_url;
-      last_img.id = "newimg";
-      last_img.crossOrigin = "anonymous";
+      var last_img = document.getElementById("newimg");
       compressImage(last_img, 0.5, 0.1);
    }
 }
@@ -108,16 +105,17 @@ function main() {
             var board_selector = document.getElementById("board");
             var board = board_selector.options[board_selector.selectedIndex].text;
             var url_selector = document.getElementById("chan_url");
+            var req = makeHttpObject();
 
             event.preventDefault();
             setTimeout(() => {
                switch (url_selector.selectedIndex) {
                   case 0:
-                     request.open(method, "https://boards.4channel.org"+board, true);
-                     request.send(null);
-                     request.onreadystatechange = function() {
-                        if (request.status == 200 && request.readyState == 4)
-                           appendImagesFourchan(request);
+                     req.open(method, "https://boards.4channel.org"+board, true);
+                     req.send(null);
+                     req.onreadystatechange = function() {
+                        if (req.status == 200 && req.readyState == 4)
+                           appendImagesFourchan(req);
                      }
                      break;
                   default:
