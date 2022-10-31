@@ -19,26 +19,34 @@ function makeHttpObject() {
 function appendImagesFourchan(request) {
    // Parse
    var resp = request.responseText;
-   const img_regex = /<a [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*href=\"([a-z0-9A-Z=.\/_\-?;:&\\]*)\"[a-z0-9A-Z=."\/_\-? ;:&]*><img/g;
+   const img_regex = /<a [a-z0-9A-Z=."\/_\-?\s ;:,()\'&\\]*href=\"([a-z0-9A-Z=.\/_\-?;:&\\]*.(?:jpg|png))\"[a-z0-9A-Z=."\/_\-? ;:&]*><img/g;
    var img_arr = [...resp.matchAll(img_regex)];
+   // View
+   var col_width = 100;
+   switch(document.getElementById("columns").selectedIndex) {
+      case 0: col_width = 210; break;
+      case 2: col_width = 80; break;
+   }
+
    // Format
    for (img of img_arr.slice(1)) {
       var img_url = img[1];
       if (img_url.slice(0, 2) == "//") {
          img_url = "https:" + img_url;
       }
-      console.log(img_url);
-
+      // Debig
+      /* console.log(img_url); */
       // Print
       document.getElementById("cards-here").innerHTML +=
-      '<div class="img card" > \
-         <img class="img card-img-top" src="'+img_url+'" crossorigin="anonymous" onclick="window.open(this.src)"> \
+      '<div class="img card" style="width: calc('+col_width+'px + 11vw); height: calc('+(col_width+20)+'px + 11vw);"> \
+         <img class="img card-img-top" src="'+img_url+'" style="height: calc('+col_width+'px + 9.5vw);" onclick="window.open(this.src)"> \
          <div class="img-text card-body row">  \
             <p class="img-text card-text col">Аноним</p>  \
             <p class="img-text card-text col" style="text-align: end;">№16423301</p> \
          </div> \
       </div>';
       // Compress
+      /* TODO */
    }
 }
 
